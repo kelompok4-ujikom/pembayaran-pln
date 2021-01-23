@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('forms/login');
 });
+Route::get('/daftar', function () {
+    return view('forms/register');
+});
 Route::get('/admin', function () {
     return view('admin/dashboard');
 });
