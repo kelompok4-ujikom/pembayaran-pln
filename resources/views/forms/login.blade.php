@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PLN BANKING | Log in</title>
+  <title>Electric Banking | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="assets/index2.html"><b>Pembayaran</b><span class="fas fa-bolt text-warning  mx-1"></span><b>PLN</b></a>
+    <a href="assets/index2.html"><b>Pembayaran</b><span class="fas fa-bolt text-warning  mx-1"></span><b>Listrik</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
