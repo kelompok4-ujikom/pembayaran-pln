@@ -1,4 +1,4 @@
-@extends('templates/main-template')
+@extends('layout/main-template')
 
 @section('title', 'ELECTRIC BANKING | Dashboar')
 
