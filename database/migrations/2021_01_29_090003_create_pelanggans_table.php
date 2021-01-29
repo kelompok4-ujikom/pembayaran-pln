@@ -14,8 +14,16 @@ class CreatePelanggansTable extends Migration
     public function up()
     {
         Schema::create('pelanggans', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_pelanggan');
+            $table->string('username', 128);
+            $table->string('password', 258);
+            $table->integer('nomor_kwh');
+            $table->string('nama_pelanggan', 128);
+            $table->text('alamat');
+            $table->integer('tarif_id');
             $table->timestamps();
+
+            $table->foreign('tarif_id')->references('id_tarif')->on('tarifs');
         });
     }
 
