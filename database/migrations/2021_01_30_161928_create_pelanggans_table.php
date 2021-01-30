@@ -17,13 +17,13 @@ class CreatePelanggansTable extends Migration
             $table->bigIncrements('id_pelanggan');
             $table->string('username', 128);
             $table->string('password', 258);
-            $table->integer('nomor_kwh');
+            $table->char('nomor_kwh', 12);
             $table->string('nama_pelanggan', 128);
             $table->text('alamat');
-            $table->integer('tarif_id');
+            $table->unsignedBigInteger('tarif_id');
             $table->timestamps();
 
-            $table->foreign('tarif_id')->references('id_tarif')->on('tarifs');
+            $table->foreign('tarif_id')->references('id_tarif')->on('tarifs')->ondelete('cascade')->onupdate('restrict');
         });
     }
 

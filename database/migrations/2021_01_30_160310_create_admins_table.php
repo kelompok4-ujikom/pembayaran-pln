@@ -18,10 +18,8 @@ class CreateAdminsTable extends Migration
             $table->string('username', 128);
             $table->string('password', 258);
             $table->string('nama_admin', 128);
-            $table->integer('level_id');
+            $table->unsignedBigInteger('level_id');
             $table->timestamps();
-
-            $table->foreign('level_id')->references('id_level')->on('levels');
         });
     }
 

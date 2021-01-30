@@ -15,16 +15,16 @@ class CreateTagihansTable extends Migration
     {
         Schema::create('tagihans', function (Blueprint $table) {
             $table->bigIncrements('id_tagihan');
-            $table->integer('penggunaan_id');
-            $table->integer('pelanggan_id');
+            $table->unsignedBigInteger('penggunaan_id');
+            $table->unsignedBigInteger('pelanggan_id');
             $table->string('bulan', 50);
             $table->char('tahun', 4);
             $table->integer('jumlah_meter');
             $table->integer('status');
             $table->timestamps();
 
-            $table->foreign('penggunaan_id')->references('id_penggunaan')->on('penggunaans');
-            $table->foreign('pelanggan_id')->references('id_pelanggan')->on('pelanggans');
+            $table->foreign('penggunaan_id')->references('id_penggunaan')->on('penggunaans')->ondelete('cascade')->onupdate('restrict');
+            $table->foreign('pelanggan_id')->references('id_pelanggan')->on('pelanggans')->ondelete('cascade')->onupdate('restrict');
         });
     }
 
