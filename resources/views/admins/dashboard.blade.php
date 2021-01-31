@@ -1,6 +1,6 @@
-@extends('layout/main-template')
+@extends('layouts/main-template')
 
-@section('title', 'ELECTRIC BANKING | Pegawai')
+@section('title', 'ELECTRIC BANKING | Dashboar')
 
   <!-- Content Wrapper. Contains page content -->
   @section('container')
@@ -11,7 +11,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Pegawai</h1>
+              <h1>Dashboard</h1>
             </div>
           </div>
         </div><!-- /.container-fluid -->

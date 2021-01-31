@@ -19,6 +19,8 @@ class CreatePelanggansTable extends Migration
             $table->string('password', 258);
             $table->char('nomor_kwh', 12);
             $table->string('nama_pelanggan', 128);
+            $table->string('email', 128);
+            $table->char('tlp', 15);
             $table->text('alamat');
             $table->unsignedBigInteger('tarif_id');
             $table->timestamps();

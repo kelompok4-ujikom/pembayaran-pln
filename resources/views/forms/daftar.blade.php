@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PLN BANKING | Log in</title>
+  <title>Electric Banking | Register</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,16 +21,16 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="assets/index2.html"><b>Pembayaran</b><span class="fas fa-bolt text-warning  mx-1"></span><b>PLN</b></a>
+    <a href="/"><b>Pembayaran</b><span class="fas fa-bolt text-warning  mx-1"></span><b>Listrik</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Silahkan Login</p>
+      <p class="login-box-msg">Daftar</p>
 
       <form action="#" method="post">
         <div class="input-group mb-3">
-          <input type="text" name="l-username" id="l-username" class="form-control" placeholder="username">
+          <input type="text" name="r-username" id="r-username" class="form-control" placeholder="username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -38,24 +38,40 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="l-password" id="l-password" class="form-control" placeholder="Password">
+            <input type="text" name="r-email" id="r-email" class="form-control" placeholder="email">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="r-password" id="r-password" class="form-control" placeholder="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
+        <div class="input-group mb-3">
+          <input type="password" name="r-repeat-password" id="r-repeat-password" class="form-control" placeholder="repeat password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-redo"></span>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <!-- /.col -->
           <div class="col">
-            <button type="submit" class="btn btn-warning btn-block mb-2">Masuk</button>
+            <button type="submit" class="btn btn-warning btn-block mb-2">Daftar</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
       <!-- /.social-auth-links -->
       <p class="mb-1">
-        <a href="/daftar" class="text-center">Daftar akun</a>
+        <a href="/" class="text-center">Masuk</a>
       </p>
     </div>
     <!-- /.login-card-body -->

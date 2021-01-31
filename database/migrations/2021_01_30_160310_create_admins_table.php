@@ -18,6 +18,8 @@ class CreateAdminsTable extends Migration
             $table->string('username', 128);
             $table->string('password', 258);
             $table->string('nama_admin', 128);
+            $table->string('email', 128);
+            $table->string('tlp', 15);
             $table->unsignedBigInteger('level_id');
             $table->timestamps();
         });

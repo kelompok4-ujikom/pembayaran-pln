@@ -14,13 +14,13 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('admin/dashboard');
+        return view('admins/dashboard');
     }
 
     public function pegawai()
     {
         //
-        return view('admin/pegawai');
+        return view('admins/pegawai');
     }
 
     /**
