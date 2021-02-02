@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTarifsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTarifsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tarifs', function (Blueprint $table) {
-            $table->bigIncrements('id_tarif');
-            $table->integer('daya');
-            $table->integer('tarifperkwh');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->bigIncrements('id_admin');
+            $table->string('username', 128)->unique();
+            $table->string('password', 258);
+            $table->string('nama_admin', 128);
+            $table->bigInteger('id_level')->unsigned();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTarifsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarifs');
+        Schema::dropIfExists('admins');
     }
 }

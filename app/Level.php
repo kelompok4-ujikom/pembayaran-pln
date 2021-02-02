@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class tagihan extends Model
+class Level extends Model
 {
     //
 }

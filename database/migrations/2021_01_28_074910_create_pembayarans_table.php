@@ -15,13 +15,13 @@ class CreatePembayaransTable extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->bigIncrements('id_pembayaran');
-            $table->integer('id_tagihan');
-            $table->integer('id_pelanggan');
+            $table->bigInteger('id_tagihan')->unsigned();
+            $table->bigInteger('id_pelanggan')->unsigned();
             $table->date('tanggal_pembayaran');
             $table->string('bulan_bayar', 64);
-            $table->integer('biaya_admin');
-            $table->integer('total_bayar');
-            $table->integer('id_admin');
+            $table->string('biaya_admin', 64);
+            $table->string('total_bayar', 64);
+            $table->bigInteger('id_admin')->unsigned();
             $table->timestamps();
         });
     }
