@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Level;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -57,7 +58,8 @@ class RegisterController extends Controller
             'email.required' => 'Email harus diisi!',
             'email.unique' => 'Email sudah terdaftar!',
             'password.required' => 'Password harus diisi!',
-            'password.min' => 'Password minimal 8 karakter'
+            'password.min' => 'Password minimal 8 karakter!',
+            'password.confirmed' => 'Password tidak sama!'
         ]);
     }
 
@@ -69,10 +71,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        // ]);
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $level = Level::select('id')->where('name', 'pelanggan')->first();
+        $user->levels()->attach($level);
+
+        return $user;
     }
 }

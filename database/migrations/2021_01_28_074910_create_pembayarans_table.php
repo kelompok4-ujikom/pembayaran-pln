@@ -14,14 +14,14 @@ class CreatePembayaransTable extends Migration
     public function up()
     {
         Schema::create('pembayarans', function (Blueprint $table) {
-            $table->bigIncrements('id_pembayaran');
-            $table->bigInteger('id_tagihan')->unsigned();
-            $table->bigInteger('id_pelanggan')->unsigned();
+            $table->increments('id');
+            $table->integer('id_tagihan')->unsigned();
+            $table->integer('id_pelanggan')->unsigned();
             $table->date('tanggal_pembayaran');
             $table->string('bulan_bayar', 64);
             $table->string('biaya_admin', 64);
             $table->string('total_bayar', 64);
-            $table->bigInteger('id_admin')->unsigned();
+            $table->integer('id_admin')->unsigned();
             $table->timestamps();
         });
     }

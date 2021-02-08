@@ -12,14 +12,18 @@
 */
 // MAIN FORMS
 Route::get('/', 'HomeController@index');
-Route::get('/daftar', 'HomeController@daftar');
 
-// MAIN CONTROL
-Route::get('/admin', 'AdminController@index');
-
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function() {
+    Route::get('/beranda', 'BerandaController@index')->name('beranda.index');
+});
+Route::namespace('Pelanggan')->prefix('pelanggan')->middleware(['auth', 'pelanggan'])->name('pelanggan.')->group(function() {
+    Route::get('/beranda', 'BerandaController@index')->name('beranda.index');
+});
+Route::namespace('Bank')->prefix('bank')->middleware(['auth', 'bank'])->name('bank.')->group(function() {
+    Route::get('/beranda', 'BerandaController@index')->name('beranda.index');
+});

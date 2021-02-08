@@ -14,7 +14,7 @@ class CreateTarifsTable extends Migration
     public function up()
     {
         Schema::create('tarifs', function (Blueprint $table) {
-            $table->bigIncrements('id_tarif');
+            $table->increments('id');
             $table->string('daya', 64);
             $table->string('tarifperkwh', 64);
             $table->timestamps();

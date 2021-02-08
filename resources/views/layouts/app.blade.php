@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -47,7 +47,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
                 <div class="info">
-                    <a href="#" class="d-block text-success">Admin</a>
+                    <a href="#" class="d-block text-success">{{ Auth::user()->name }}</a>
                 </div>
             </ul>
         </nav>
@@ -57,7 +57,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ url('/') }}" class="brand-link">
-                <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                <img src="{{ url('/assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light"><b>Electric</b></span>
             </a>
@@ -67,10 +67,10 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('/assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->name }} <span class="caret"></span></a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}<span class="caret"></span></a>
                     </div>
                 </div>
 
@@ -78,9 +78,26 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-header">EXAMPLES</li>
+
+                        <li class="nav-header">MENU</li>
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-dollar-sign"></i>
+                                <p>Pembayaran</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-database"></i>
+                                <p>Data Penggunaan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-user-check"></i>
+                                <p>Verifikasi</p>
+                            </a>
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-file-alt"></i>
@@ -107,20 +124,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="../calendar.html" class="nav-link">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>Calendar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('logout') }}" class="nav-link" 
-                              onclick="event.preventDefault();
+                            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>logout</p>
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              @csrf
+                                @csrf
                             </form>
                         </li>
                     </ul>
@@ -149,15 +159,15 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="{{ url('/assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
-    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url('/assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- bs-custom-file-input -->
-    <script src="assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="{{ url('/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="assets/dist/js/adminlte.min.js"></script>
+    <script src="{{ url('/assets/dist/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="assets/dist/js/demo.js"></script>
+    <script src="{{ url('/assets/dist/js/demo.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             bsCustomFileInput.init();

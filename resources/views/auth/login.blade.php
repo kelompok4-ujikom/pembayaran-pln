@@ -35,7 +35,7 @@
                     <div class="input-group mb-3">
                         <input id="email" type="email" name="email" value="{{ old('email') }}" required
                             autocomplete="email" class="form-control @error('email') is-invalid @enderror"
-                            placeholder="Nama pengguna">
+                            placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -85,11 +85,6 @@
                     <p>- Atau -</p>
                     <a href="{{ route('register') }}" class="btn btn-block btn-warning"> Daftar </a>
                 </div>
-                @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Lupa password?') }}
-                </a>
-                @endif
             </div>
             <!-- /.login-card-body -->
         </div>

@@ -14,8 +14,8 @@ class CreatePenggunaansTable extends Migration
     public function up()
     {
         Schema::create('penggunaans', function (Blueprint $table) {
-            $table->bigIncrements('id_penggunaan');
-            $table->bigInteger('id_pelanggan')->unsigned();
+            $table->increments('id');
+            $table->integer('id_pelanggan')->unsigned();
             $table->string('bulan', 64);
             $table->string('tahun', 64);
             $table->string('meter_awal', 64);

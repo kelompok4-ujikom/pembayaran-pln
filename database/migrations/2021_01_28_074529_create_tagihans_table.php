@@ -14,13 +14,13 @@ class CreateTagihansTable extends Migration
     public function up()
     {
         Schema::create('tagihans', function (Blueprint $table) {
-            $table->bigIncrements('id_tagihan');
-            $table->bigInteger('id_penggunaan')->unsigned();
-            $table->bigInteger('id_pelanggan')->unsigned();
+            $table->increments('id');
+            $table->integer('id_penggunaan')->unsigned();
+            $table->integer('id_pelanggan')->unsigned();
             $table->string('bulan', 64);
             $table->string('tahun', 64);
             $table->string('jumlah_meter', 128);
-            $table->integer('status');
+            $table->enum('status', ['aktif', 'tidak aktif']);
             $table->timestamps();
         });
     }
