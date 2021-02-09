@@ -80,12 +80,7 @@
                         data-accordion="false">
 
                         <li class="nav-header">MENU</li>
-                        <li class="nav-item">
-                            <a href="../calendar.html" class="nav-link">
-                                <i class="nav-icon fas fa-dollar-sign"></i>
-                                <p>Pembayaran</p>
-                            </a>
-                        </li>
+                        @hasrole('admin')
                         <li class="nav-item">
                             <a href="../calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-database"></i>
@@ -95,7 +90,7 @@
                         <li class="nav-item">
                             <a href="../calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-user-check"></i>
-                                <p>Verifikasi</p>
+                                <p>Data User</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
@@ -122,7 +117,44 @@
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="assets/index.html" class="nav-link">
+                                        <i class="far fa-file-alt nav-icon"></i>
+                                        <p>laporan tarif</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
+                        @endhasrole()
+                        @hasrole('pelanggan')
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-dollar-sign"></i>
+                                <p>Tagihan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-sync"></i>
+                                <p>Riwayat Transaksi</p>
+                            </a>
+                        </li>
+                        @endhasrole()
+                        @hasrole('bank')
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-user-check"></i>
+                                <p>Validasi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-file-alt"></i>
+                                <p>Laporan</p>
+                            </a>
+                        </li>
+                        @endhasrole()
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
@@ -172,7 +204,6 @@
         $(document).ready(function () {
             bsCustomFileInput.init();
         });
-
     </script>
 </body>
 

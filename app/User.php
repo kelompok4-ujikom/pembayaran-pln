@@ -41,13 +41,13 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Level');
     }
-    public function hasAnyRole($role)
+    public function hasAnyRoles($levels)
     {
-        return null !== $this->levels()->where('name', $role)->first();
+        return null !== $this->levels()->where('name', $levels)->first();
     }
 
-    public function hasRole($role)
+    public function hasAnyRole($level)
     {
-        return User::where('name', $role)->get();
+        return null !== $this->levels()->where('name', $level)->first();
     }
 }
