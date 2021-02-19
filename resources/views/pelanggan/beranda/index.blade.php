@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'ELECTRIC BANKING | Dashboar')
+@section('title', 'ELECTRIC BANKING | Dashboard')
 
 <!-- Content Wrapper. Contains page content -->
 @section('content')

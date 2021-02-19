@@ -31,7 +31,7 @@
             </ul>
 
             <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
+            <!-- <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
                     <input class="form-control form-control-navbar" type="search" placeholder="Search"
                         aria-label="Search">
@@ -41,7 +41,7 @@
                         </button>
                     </div>
                 </div>
-            </form>
+            </form> -->
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -59,20 +59,11 @@
             <a href="{{ url('/') }}" class="brand-link">
                 <img src="{{ url('/assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light"><b>Electric</b></span>
+                <span class="brand-text font-weight-light"><b>PPOB</b></span>
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ url('/assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->name }}<span class="caret"></span></a>
-                    </div>
-                </div>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -82,6 +73,12 @@
                         <li class="nav-header">MENU</li>
                         @hasrole('admin')
                         <li class="nav-item">
+                            <a href="{{ route('admin.auth.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-user-check"></i>
+                                <p>Data User</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="../calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-database"></i>
                                 <p>Data Penggunaan</p>
@@ -89,8 +86,8 @@
                         </li>
                         <li class="nav-item">
                             <a href="../calendar.html" class="nav-link">
-                                <i class="nav-icon fas fa-user-check"></i>
-                                <p>Data User</p>
+                                <i class="nav-icon fas fa-tag"></i>
+                                <p>Tarif</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">

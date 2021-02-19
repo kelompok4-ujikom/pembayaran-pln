@@ -20,6 +20,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function() {
     Route::get('/beranda', 'BerandaController@index')->name('beranda.index');
+    // tampil data user
+    Route::get('/user', 'AuthController@index')->name('auth.index');
+    // detail data user
+    Route::get('/user/detail/{user}', 'AuthController@detail')->name('auth.detail');
+    // searching
+    Route::post('/user', 'AuthController@search')->name('auth.search');
 });
 Route::namespace('Pelanggan')->prefix('pelanggan')->middleware(['auth', 'pelanggan'])->name('pelanggan.')->group(function() {
     Route::get('/beranda', 'BerandaController@index')->name('beranda.index');
