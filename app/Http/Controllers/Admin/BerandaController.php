@@ -18,7 +18,8 @@ class BerandaController extends Controller
         $user = Auth::user();
         $jumlah_pelanggan = Level::find(2)->users->count();
         return view('admin.beranda.index', [
-            'jumlah_pelanggan' => $jumlah_pelanggan
+            'jumlah_pelanggan' => $jumlah_pelanggan,
+            'user' => $user
         ]);
     }
 }

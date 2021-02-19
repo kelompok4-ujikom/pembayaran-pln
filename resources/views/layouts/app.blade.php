@@ -137,6 +137,12 @@
                                 <p>Riwayat Transaksi</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('pelanggan.edit.profile', $user->id) }}" class="nav-link">
+                                <i class="nav-icon fas fa-user-edit"></i>
+                                <p>Profile</p>
+                            </a>
+                        </li>
                         @endhasrole()
                         @hasrole('bank')
                         <li class="nav-item">

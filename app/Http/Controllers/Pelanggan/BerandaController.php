@@ -14,6 +14,9 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        return view('pelanggan.beranda.index');
+        $user = Auth::user();
+        return view('pelanggan.beranda.index', [
+            'user' => $user,
+        ]);
     }
 }

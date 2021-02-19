@@ -29,6 +29,9 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'admin'])->name(
 });
 Route::namespace('Pelanggan')->prefix('pelanggan')->middleware(['auth', 'pelanggan'])->name('pelanggan.')->group(function() {
     Route::get('/beranda', 'BerandaController@index')->name('beranda.index');
+    // edit profile
+    Route::get('/edit_profile/{user}', 'AuthController@edit_profile')->name('edit.profile');
+    Route::patch('/edit_profile/{user}/update', 'AuthController@update')->name('update.profile');
 });
 Route::namespace('Bank')->prefix('bank')->middleware(['auth', 'bank'])->name('bank.')->group(function() {
     Route::get('/beranda', 'BerandaController@index')->name('beranda.index');

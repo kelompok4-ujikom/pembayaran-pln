@@ -32,7 +32,7 @@ class AuthController extends Controller
     public function search(Request $request)
     {           
         $search = $request->search;
-        $users = User::where('name','like',"%".$search."%" )->paginate(10);
+        $users = User::where('name','like',"%".$search."%" )->paginate(5);
         return view('admin.auth.index', compact('users'));
     }
 }
