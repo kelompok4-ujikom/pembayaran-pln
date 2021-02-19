@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $level = Level::select('id')->where('name', 'pelanggan')->first();
+        $level = Level::select('id')->where('name', 'admin')->first();
         $user->levels()->attach($level);
 
         return $user;

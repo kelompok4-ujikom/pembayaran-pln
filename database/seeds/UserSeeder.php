@@ -15,13 +15,13 @@ class UserSeeder extends Seeder
     {
         //
         DB::table('levels')->insert([
-            'name' => 'admin',
+            'name' => 'admin'
         ]);
         DB::table('levels')->insert([
-            'name' => 'pelanggan',
+            'name' => 'pelanggan'
         ]);
         DB::table('levels')->insert([
-            'name' => 'bank',
+            'name' => 'bank'
         ]);
     }
 }
